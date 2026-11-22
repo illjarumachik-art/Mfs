@@ -2,12 +2,13 @@
 
 Landing assets for the Hypnotic Artifact impulse massager.
 
-## Carousel card 01
+## Carousel cards
 
-Concept: «Рабочий день закончился — теперь время для себя»
+Format: **1080 × 1350 px (4:5)** · palette `#182333` / `#F5F0E9` / `#EAB598`
 
-| File | Spec |
-|------|------|
-| `assets/hypnotic-artifact-carousel-card-01.jpg` | 1080 × 1350 px, 4:5, JPEG |
-| `assets/hypnotic-artifact-carousel-card-01.png` | Same size, PNG master |
-| `assets/hypnotic-artifact-product-reference.jpg` | Product photo used as visual reference |
+| Card | Concept | Files |
+|------|---------|-------|
+| 01 | End of workday → evening for yourself | `assets/hypnotic-artifact-carousel-card-01.jpg` (+ `.png`) |
+| 02 | Calm home ritual, product in hand | `assets/hypnotic-artifact-carousel-card-02.jpg` (+ `.png`) |
+
+Product reference: `assets/hypnotic-artifact-product-reference.jpg`
