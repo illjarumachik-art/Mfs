@@ -70,11 +70,16 @@ body {
   background:
     linear-gradient(
       105deg,
-      rgba(247, 249, 252, 0.96) 0%,
-      rgba(247, 249, 252, 0.88) 28%,
-      rgba(247, 249, 252, 0.42) 48%,
-      rgba(247, 249, 252, 0.08) 62%,
-      transparent 72%
+      rgba(247, 249, 252, 0.97) 0%,
+      rgba(247, 249, 252, 0.9) 34%,
+      rgba(247, 249, 252, 0.48) 54%,
+      rgba(247, 249, 252, 0.1) 68%,
+      transparent 78%
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(247, 249, 252, 0.55) 0%,
+      transparent 32%
     ),
     linear-gradient(
       to top,
@@ -111,45 +116,46 @@ body {
 }
 
 .card__copy {
-  max-width: min(52%, 560px);
-}
-
-.card__eyebrow {
-  margin: 0 0 0.65em;
-  font-family: "Manrope", sans-serif;
-  font-size: clamp(0.7rem, 1.15vw, 0.95rem);
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--electric-deep);
-  opacity: 0;
-  animation: riseIn 0.7s ease 0.1s forwards;
+  max-width: min(78%, 920px);
 }
 
 .card__title {
   margin: 0;
-  max-width: 11ch;
+  max-width: 22ch;
   font-family: "Unbounded", sans-serif;
   font-weight: 800;
-  font-size: clamp(1.55rem, 3.6vw, 3.35rem);
-  line-height: 1.08;
+  font-size: clamp(1.45rem, 3.35vw, 3.05rem);
+  line-height: 1.12;
   letter-spacing: -0.03em;
   color: var(--ink);
   text-wrap: balance;
   opacity: 0;
-  animation: riseIn 0.8s ease 0.2s forwards;
+  animation: riseIn 0.8s ease 0.15s forwards;
+}
+
+.card__lead {
+  margin: clamp(10px, 1.3vw, 16px) 0 0;
+  max-width: 22ch;
+  font-family: "Unbounded", sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.05rem, 1.85vw, 1.65rem);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--electric-deep);
+  opacity: 0;
+  animation: riseIn 0.75s ease 0.28s forwards;
 }
 
 .card__subtitle {
-  margin: clamp(10px, 1.4vw, 18px) 0 0;
-  max-width: 34ch;
-  font-size: clamp(0.85rem, 1.35vw, 1.15rem);
+  margin: clamp(8px, 1.1vw, 14px) 0 0;
+  max-width: 36ch;
+  font-size: clamp(0.85rem, 1.3vw, 1.1rem);
   font-weight: 600;
   line-height: 1.45;
   color: var(--ink-soft);
   text-wrap: pretty;
   opacity: 0;
-  animation: riseIn 0.8s ease 0.35s forwards;
+  animation: riseIn 0.8s ease 0.4s forwards;
 }
 
 .card__footer {
@@ -303,8 +309,12 @@ body {
     );
   }
 
+  .card__copy {
+    max-width: 100%;
+  }
+
   .card__title {
-    max-width: 14ch;
+    max-width: 18ch;
   }
 
   .card__footer {
@@ -325,8 +335,8 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .card__photo,
   .card__sun,
-  .card__eyebrow,
   .card__title,
+  .card__lead,
   .card__subtitle,
   .card__features,
   .card__cta {
