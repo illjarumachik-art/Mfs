@@ -1,15 +1,17 @@
 :root {
   --white: #ffffff;
-  --fog: #eef2f6;
-  --ink: #152033;
-  --ink-soft: #3a465c;
-  --sun: #ffc857;
+  --fog: #f4efe6;
+  --ink: #122018;
+  --ink-soft: #3a4a40;
+  --pine: #0f3d2e;
+  --pine-deep: #08261c;
+  --navy: #0d2140;
+  --gold: #e8b84a;
+  --gold-soft: #f0d08a;
+  --red: #c62828;
   --electric: #1f6fff;
-  --electric-deep: #0d4fd6;
-  --orange: #ff6b2c;
-  --lime: #8fd94a;
-  --card-radius: 0;
-  --shadow: 0 28px 80px rgba(21, 32, 51, 0.18);
+  --lime: #9adf4a;
+  --shadow: 0 28px 80px rgba(8, 38, 28, 0.28);
 }
 
 *,
@@ -28,9 +30,9 @@ body {
   font-family: "Manrope", sans-serif;
   color: var(--ink);
   background:
-    radial-gradient(ellipse 80% 60% at 70% 20%, rgba(255, 200, 87, 0.24), transparent 55%),
-    radial-gradient(ellipse 50% 50% at 10% 80%, rgba(31, 111, 255, 0.12), transparent 50%),
-    linear-gradient(160deg, #f7f9fc 0%, #e8eef6 45%, #dfe8f4 100%);
+    radial-gradient(ellipse 70% 55% at 80% 20%, rgba(232, 184, 74, 0.28), transparent 55%),
+    radial-gradient(ellipse 50% 50% at 10% 85%, rgba(15, 61, 46, 0.22), transparent 50%),
+    linear-gradient(160deg, #1a2f28 0%, #0d2140 45%, #122018 100%);
   display: grid;
   place-items: center;
   padding: clamp(16px, 3vw, 40px);
@@ -44,10 +46,9 @@ body {
   position: relative;
   aspect-ratio: 16 / 9;
   overflow: hidden;
-  border-radius: var(--card-radius);
   box-shadow: var(--shadow);
   isolation: isolate;
-  background: var(--fog);
+  background: #1a2430;
 }
 
 .card__photo {
@@ -56,10 +57,10 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 62% center;
+  object-position: 68% center;
   z-index: 0;
   transform: scale(1.02);
-  animation: drift 14s ease-in-out infinite alternate;
+  animation: drift 16s ease-in-out infinite alternate;
 }
 
 .card__veil {
@@ -70,39 +71,73 @@ body {
   background:
     linear-gradient(
       105deg,
-      rgba(247, 249, 252, 0.97) 0%,
-      rgba(247, 249, 252, 0.92) 32%,
-      rgba(247, 249, 252, 0.5) 52%,
-      rgba(247, 249, 252, 0.1) 68%,
-      transparent 78%
-    ),
-    linear-gradient(
-      to bottom,
-      rgba(247, 249, 252, 0.58) 0%,
-      transparent 34%
+      rgba(8, 38, 28, 0.88) 0%,
+      rgba(8, 38, 28, 0.78) 28%,
+      rgba(8, 38, 28, 0.42) 48%,
+      rgba(8, 38, 28, 0.08) 62%,
+      transparent 74%
     ),
     linear-gradient(
       to top,
-      rgba(21, 32, 51, 0.16) 0%,
-      transparent 26%
+      rgba(8, 38, 28, 0.55) 0%,
+      transparent 34%
     );
 }
 
-.card__sun {
+.card__glow {
   position: absolute;
-  top: -10%;
-  right: 4%;
-  width: 46%;
-  height: 52%;
+  top: -12%;
+  right: 8%;
+  width: 48%;
+  height: 55%;
   z-index: 1;
   pointer-events: none;
   background: radial-gradient(
-    circle at 62% 38%,
-    rgba(255, 200, 87, 0.5) 0%,
-    rgba(255, 200, 87, 0.14) 36%,
+    circle at 55% 45%,
+    rgba(232, 184, 74, 0.35) 0%,
+    rgba(232, 184, 74, 0.08) 40%,
     transparent 70%
   );
   animation: sunPulse 5.5s ease-in-out infinite;
+}
+
+.card__badge {
+  position: absolute;
+  top: clamp(18px, 3.2vw, 42px);
+  right: clamp(18px, 3.2vw, 42px);
+  z-index: 3;
+  width: clamp(92px, 9.2vw, 128px);
+  height: clamp(92px, 9.2vw, 128px);
+  border-radius: 50%;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  gap: 2px;
+  background:
+    radial-gradient(circle at 35% 30%, #fff6d8 0%, var(--gold) 42%, #c99220 100%);
+  color: var(--pine-deep);
+  box-shadow:
+    0 10px 28px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.55);
+  border: 3px solid rgba(255, 255, 255, 0.65);
+  opacity: 0;
+  animation: riseIn 0.7s ease 0.15s forwards;
+}
+
+.card__badge-age {
+  font-family: "Unbounded", sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.45rem, 2.4vw, 2.2rem);
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.card__badge-text {
+  font-size: clamp(0.58rem, 0.85vw, 0.78rem);
+  font-weight: 800;
+  line-height: 1.15;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
 }
 
 .card__content {
@@ -111,54 +146,61 @@ body {
   height: 100%;
   display: grid;
   grid-template-rows: 1fr auto;
-  gap: clamp(16px, 2.4vw, 32px);
-  padding: clamp(22px, 4.2vw, 64px);
+  gap: clamp(14px, 2vw, 28px);
+  padding: clamp(22px, 4vw, 60px);
 }
 
 .card__copy {
-  max-width: min(72%, 860px);
-}
-
-.card__name {
-  margin: 0;
-  max-width: 28ch;
-  font-family: "Unbounded", sans-serif;
-  font-weight: 800;
-  font-size: clamp(1.15rem, 2.35vw, 2.15rem);
-  line-height: 1.15;
-  letter-spacing: -0.03em;
-  color: var(--ink);
-  text-wrap: balance;
-  opacity: 0;
-  animation: riseIn 0.75s ease 0.1s forwards;
+  max-width: min(58%, 680px);
 }
 
 .card__title {
-  margin: clamp(12px, 1.5vw, 20px) 0 0;
-  max-width: 14ch;
+  margin: 0;
+  max-width: 12ch;
   font-family: "Unbounded", sans-serif;
   font-weight: 800;
-  font-size: clamp(1.7rem, 3.9vw, 3.55rem);
+  font-size: clamp(1.7rem, 3.8vw, 3.45rem);
   line-height: 1.08;
-  letter-spacing: -0.035em;
-  color: var(--electric-deep);
+  letter-spacing: -0.03em;
+  color: var(--white);
   text-wrap: balance;
+  text-shadow: 0 8px 28px rgba(0, 0, 0, 0.35);
   opacity: 0;
-  animation: riseIn 0.8s ease 0.22s forwards;
+  animation: riseIn 0.8s ease 0.18s forwards;
 }
 
-.card__subtitle {
+.card__lead {
   margin: clamp(12px, 1.4vw, 18px) 0 0;
   max-width: 22ch;
   font-family: "Unbounded", sans-serif;
   font-weight: 700;
-  font-size: clamp(1.15rem, 2.1vw, 1.85rem);
-  line-height: 1.22;
+  font-size: clamp(1.05rem, 1.9vw, 1.7rem);
+  line-height: 1.2;
   letter-spacing: -0.02em;
-  color: var(--ink);
+  color: var(--gold-soft);
   text-wrap: balance;
   opacity: 0;
-  animation: riseIn 0.8s ease 0.34s forwards;
+  animation: riseIn 0.75s ease 0.3s forwards;
+}
+
+.card__subtitle {
+  margin: clamp(10px, 1.2vw, 16px) 0 0;
+  max-width: 34ch;
+  font-size: clamp(0.9rem, 1.25vw, 1.12rem);
+  font-weight: 600;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.88);
+  text-wrap: pretty;
+  opacity: 0;
+  animation: riseIn 0.8s ease 0.4s forwards;
+}
+
+.card__footer {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: clamp(16px, 3vw, 36px);
+  width: 100%;
 }
 
 .card__features {
@@ -166,36 +208,72 @@ body {
   margin: 0;
   padding: 0;
   display: grid;
-  gap: clamp(14px, 1.7vw, 24px);
-  max-width: min(70%, 720px);
+  gap: clamp(10px, 1.2vw, 16px);
+  max-width: min(58%, 640px);
   opacity: 0;
-  animation: riseIn 0.75s ease 0.48s forwards;
+  animation: riseIn 0.75s ease 0.5s forwards;
 }
 
 .card__features li {
   display: flex;
   align-items: center;
-  gap: 0.9em;
-  font-size: clamp(1.15rem, 1.95vw, 1.6rem);
+  gap: 0.8em;
+  font-size: clamp(0.95rem, 1.45vw, 1.25rem);
   font-weight: 800;
   line-height: 1.2;
-  color: var(--ink);
+  color: var(--white);
 }
 
 .icon {
   flex: 0 0 auto;
-  width: clamp(52px, 4.8vw, 72px);
-  height: clamp(52px, 4.8vw, 72px);
+  width: clamp(42px, 3.8vw, 56px);
+  height: clamp(42px, 3.8vw, 56px);
   display: grid;
   place-items: center;
-  color: var(--electric);
-  background: linear-gradient(145deg, rgba(31, 111, 255, 0.16), rgba(255, 200, 87, 0.18));
-  border: 2px solid rgba(31, 111, 255, 0.24);
+  color: var(--lime);
+  background: linear-gradient(145deg, rgba(31, 111, 255, 0.28), rgba(154, 223, 74, 0.18));
+  border: 1.5px solid rgba(154, 223, 74, 0.35);
 }
 
 .icon svg {
-  width: 64%;
-  height: 64%;
+  width: 62%;
+  height: 62%;
+}
+
+.card__cta {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: clamp(48px, 4.6vw, 62px);
+  padding: 0.75em 1.5em;
+  margin-left: auto;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--red) 0%, #8e1b1b 100%);
+  color: var(--white);
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(0.95rem, 1.35vw, 1.15rem);
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  box-shadow:
+    0 12px 30px rgba(198, 40, 40, 0.42),
+    inset 0 1px 0 rgba(255, 255, 255, 0.28);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+  opacity: 0;
+  animation: riseIn 0.75s ease 0.62s forwards, ctaGlow 3.2s ease-in-out 1.2s infinite;
+}
+
+.card__cta:hover,
+.card__cta:focus-visible {
+  transform: translateY(-2px);
+  filter: brightness(1.06);
+  outline: none;
+}
+
+.card__cta:focus-visible {
+  outline: 3px solid rgba(232, 184, 74, 0.8);
+  outline-offset: 3px;
 }
 
 @keyframes riseIn {
@@ -212,12 +290,12 @@ body {
 @keyframes sunPulse {
   0%,
   100% {
-    opacity: 0.75;
+    opacity: 0.7;
     transform: scale(1);
   }
   50% {
     opacity: 1;
-    transform: scale(1.06);
+    transform: scale(1.05);
   }
 }
 
@@ -226,28 +304,42 @@ body {
     transform: scale(1.02) translate3d(0, 0, 0);
   }
   to {
-    transform: scale(1.05) translate3d(-1.2%, 0.6%, 0);
+    transform: scale(1.05) translate3d(-1%, 0.5%, 0);
+  }
+}
+
+@keyframes ctaGlow {
+  0%,
+  100% {
+    box-shadow:
+      0 12px 30px rgba(198, 40, 40, 0.42),
+      inset 0 1px 0 rgba(255, 255, 255, 0.28);
+  }
+  50% {
+    box-shadow:
+      0 14px 36px rgba(198, 40, 40, 0.55),
+      0 0 0 4px rgba(232, 184, 74, 0.16),
+      inset 0 1px 0 rgba(255, 255, 255, 0.3);
   }
 }
 
 @media (max-width: 720px) {
   .card {
     aspect-ratio: auto;
-    min-height: 620px;
+    min-height: 680px;
   }
 
   .card__photo {
-    object-position: 78% 35%;
+    object-position: 75% 30%;
   }
 
   .card__content {
-    padding-right: clamp(18px, 5vw, 28px);
-    padding-top: clamp(18px, 5vw, 28px);
+    padding-right: clamp(16px, 5vw, 24px);
     background: linear-gradient(
       to bottom,
-      rgba(247, 249, 252, 0.94) 0%,
-      rgba(247, 249, 252, 0.78) 55%,
-      rgba(247, 249, 252, 0.4) 100%
+      rgba(8, 38, 28, 0.88) 0%,
+      rgba(8, 38, 28, 0.72) 55%,
+      rgba(8, 38, 28, 0.45) 100%
     );
   }
 
@@ -256,22 +348,31 @@ body {
     max-width: 100%;
   }
 
-  .card__title {
-    max-width: 16ch;
+  .card__footer {
+    flex-direction: column;
+    align-items: stretch;
   }
 
-  .card__subtitle {
-    max-width: 24ch;
+  .card__cta {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .card__badge {
+    top: 14px;
+    right: 14px;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .card__photo,
-  .card__sun,
-  .card__name,
+  .card__glow,
+  .card__badge,
   .card__title,
+  .card__lead,
   .card__subtitle,
-  .card__features {
+  .card__features,
+  .card__cta {
     animation: none;
     opacity: 1;
     transform: none;

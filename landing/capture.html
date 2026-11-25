@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=1920, initial-scale=1" />
-  <title>STEM Solar Robot — capture 1920×1080</title>
+  <title>STEM Solar Robot — New Year capture 1920×1080</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Unbounded:wght@600;700;800&display=swap" rel="stylesheet" />
@@ -15,7 +15,7 @@
       margin: 0;
       padding: 0;
       overflow: hidden;
-      background: #e8eef6;
+      background: #0d2140;
     }
     body { display: block; }
     .stage {
@@ -30,11 +30,13 @@
       box-shadow: none;
     }
     .card__photo,
-    .card__sun,
-    .card__name,
+    .card__glow,
+    .card__badge,
     .card__title,
+    .card__lead,
     .card__subtitle,
-    .card__features {
+    .card__features,
+    .card__cta {
       animation: none !important;
       opacity: 1 !important;
       transform: none !important;
@@ -49,52 +51,70 @@
     <article class="card" id="sell-card">
       <img
         class="card__photo"
-        src="/assets/stem-solar-power-scene-bg-1920x1080.jpg"
-        alt="Солнечный квадробот STEM Solar Robot на балконе"
+        src="/assets/stem-newyear-gift-scene-bg-1920x1080.jpg"
+        alt="Мальчик под ёлкой открывает STEM Solar Robot"
         width="1920"
         height="1080"
       />
       <div class="card__veil" aria-hidden="true"></div>
-      <div class="card__sun" aria-hidden="true"></div>
+      <div class="card__glow" aria-hidden="true"></div>
+      <div class="card__badge" aria-label="Для детей от 8 лет">
+        <span class="card__badge-age">8+</span>
+        <span class="card__badge-text">Для детей<br />от 8 лет</span>
+      </div>
       <div class="card__content">
         <header class="card__copy">
-          <p class="card__name">
-            Гидравлический робот STEM Solar Robot на&nbsp;солнечной батарее 12&nbsp;в&nbsp;1
+          <h1 class="card__title">Отличный подарок на&nbsp;Новый год</h1>
+          <p class="card__lead">
+            STEM Solar Robot 12&nbsp;в&nbsp;1 — конструктор для юного инженера
           </p>
-          <h1 class="card__title">Робот, который движется от&nbsp;солнца</h1>
           <p class="card__subtitle">
-            Без батареек: поставь модель под солнечный свет — и&nbsp;она поедет
+            Ребёнок собирает 12 разных моделей по&nbsp;пошаговой схеме.
+            Готовые роботы движутся по&nbsp;ровной поверхности и&nbsp;по&nbsp;воде
+            от&nbsp;солнечного света или яркой лампы
           </p>
         </header>
-        <ul class="card__features">
-          <li>
-            <span class="icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none">
-                <circle cx="12" cy="12" r="3.2" stroke="currentColor" stroke-width="2"/>
-                <path d="M12 3.2v2.1M12 18.7v2.1M3.2 12h2.1M18.7 12h2.1M6 6l1.5 1.5M16.5 16.5 18 18M18 6l-1.5 1.5M7.5 16.5 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-              </svg>
-            </span>
-            <span>Работает от солнечной энергии</span>
-          </li>
-          <li>
-            <span class="icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none">
-                <path d="M4 16.5h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                <path d="M7 16.5V11l5-4 5 4v5.5" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-                <path d="M5.5 19c1.2-1.8 3.2-2.8 6.5-2.8s5.3 1 6.5 2.8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-              </svg>
-            </span>
-            <span>Движется по ровной поверхности и по воде</span>
-          </li>
-          <li>
-            <span class="icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none">
-                <path d="M8 4h3v3H8V4Zm5 0h3v3h-3V4ZM8 9h3v3H8V9Zm5 0h3v3h-3V9ZM4 14h3v3H4v-3Zm5 0h3v3H9v-3Zm5 0h3v3h-3v-3Zm5 0h3v3h-3v-3Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-              </svg>
-            </span>
-            <span>12 моделей в одном наборе</span>
-          </li>
-        </ul>
+        <div class="card__footer">
+          <ul class="card__features">
+            <li>
+              <span class="icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M8 4h3v3H8V4Zm5 0h3v3h-3V4ZM8 9h3v3H8V9Zm5 0h3v3h-3V9ZM4 14h3v3H4v-3Zm5 0h3v3H9v-3Zm5 0h3v3h-3v-3Zm5 0h3v3h-3v-3Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span>12 разных моделей в одном наборе</span>
+            </li>
+            <li>
+              <span class="icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M7 3.5h8.5L19 7v13.5H7V3.5Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                  <path d="M15 3.5V7h4M9.5 11h5M9.5 14.5h5M9.5 18h3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </span>
+              <span>Пошаговая взрыв-схема сборки</span>
+            </li>
+            <li>
+              <span class="icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <circle cx="12" cy="8.5" r="3" stroke="currentColor" stroke-width="2"/>
+                  <path d="M6.5 19.5c.8-3 2.9-4.5 5.5-4.5s4.7 1.5 5.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M17.5 6.5 19 5M19.5 9.5h1.8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </span>
+              <span>Развивает логику, мышление и мелкую моторику</span>
+            </li>
+            <li>
+              <span class="icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <circle cx="12" cy="12" r="3.2" stroke="currentColor" stroke-width="2"/>
+                  <path d="M12 3.2v2.1M12 18.7v2.1M3.2 12h2.1M18.7 12h2.1M6 6l1.5 1.5M16.5 16.5 18 18M18 6l-1.5 1.5M7.5 16.5 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </span>
+              <span>Работает от солнечной энергии</span>
+            </li>
+          </ul>
+          <a class="card__cta" href="#gift">Подарить на Новый год</a>
+        </div>
       </div>
     </article>
   </main>
