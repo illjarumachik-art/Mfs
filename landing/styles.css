@@ -208,8 +208,8 @@ body {
   margin: 0;
   padding: 0;
   display: grid;
-  gap: clamp(10px, 1.2vw, 16px);
-  max-width: min(58%, 640px);
+  gap: clamp(12px, 1.5vw, 20px);
+  max-width: min(64%, 720px);
   opacity: 0;
   animation: riseIn 0.75s ease 0.5s forwards;
 }
@@ -217,8 +217,8 @@ body {
 .card__features li {
   display: flex;
   align-items: center;
-  gap: 0.8em;
-  font-size: clamp(0.95rem, 1.45vw, 1.25rem);
+  gap: 0.9em;
+  font-size: clamp(1.05rem, 1.7vw, 1.45rem);
   font-weight: 800;
   line-height: 1.2;
   color: var(--white);
@@ -226,18 +226,18 @@ body {
 
 .icon {
   flex: 0 0 auto;
-  width: clamp(42px, 3.8vw, 56px);
-  height: clamp(42px, 3.8vw, 56px);
+  width: clamp(56px, 5.2vw, 78px);
+  height: clamp(56px, 5.2vw, 78px);
   display: grid;
   place-items: center;
   color: var(--lime);
   background: linear-gradient(145deg, rgba(31, 111, 255, 0.28), rgba(154, 223, 74, 0.18));
-  border: 1.5px solid rgba(154, 223, 74, 0.35);
+  border: 2px solid rgba(154, 223, 74, 0.4);
 }
 
 .icon svg {
-  width: 62%;
-  height: 62%;
+  width: 64%;
+  height: 64%;
 }
 
 .card__cta {
